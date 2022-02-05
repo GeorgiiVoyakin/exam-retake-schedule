@@ -1,4 +1,4 @@
-package ru.mirea.ikbo1319.examretakeschedule
+package ru.mirea.ikbo1319
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
