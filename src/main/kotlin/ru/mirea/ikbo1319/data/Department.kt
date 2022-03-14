@@ -1,3 +1,7 @@
 package ru.mirea.ikbo1319.data
 
-data class Department(val id: Long, val name: String)
+import javax.persistence.Entity
+import javax.persistence.Id
+
+@Entity
+data class Department(@Id val id: Long, val name: String)
