@@ -8,4 +8,8 @@ class DepartmentService(private val departmentRepository: DepartmentRepository) 
     fun addDepartment() {
 
     }
+
+    fun deleteById(id: Long) {
+        departmentRepository.deleteById(id)
+    }
 }

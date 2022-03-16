@@ -1,7 +1,16 @@
 package ru.mirea.ikbo1319.data
 
-import javax.persistence.Entity
-import javax.persistence.Id
+import javax.persistence.*
 
 @Entity
-data class Department(@Id val id: Long, val name: String)
+@Table(name = "Department")
+data class Department(
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    val id: Long,
+    @Column(unique = true, name = "department")
+    val name: String,
+) {
+    @OneToMany(mappedBy = "department", cascade = [CascadeType.ALL])
+    val subjects: MutableSet<Subject> = HashSet()
+}

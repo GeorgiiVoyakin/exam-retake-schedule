@@ -8,7 +8,7 @@ import ru.mirea.ikbo1319.service.GroupService
 class GroupController(private val groupService: GroupService) {
     @PostMapping("/api/schedule/group")
     fun addGroup(@RequestParam name: String) {
-        val group = Group(null, name)
+        val group = Group(null, name, emptyList())
         groupService.save(group)
     }
 
