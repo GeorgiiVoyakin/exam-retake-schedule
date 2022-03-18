@@ -10,7 +10,7 @@ data class RetakeInfoDTO(
     var place: String,
     var note: String,
     var teacher: String,
-    var group: String,
+    var group: List<String>,
     var subject: String,
 ) {
     constructor(retakeInfo: RetakeInfo) : this(
@@ -19,7 +19,15 @@ data class RetakeInfoDTO(
         retakeInfo.place,
         retakeInfo.note,
         retakeInfo.teacher.name,
-        retakeInfo.group.name,
+        listOf(retakeInfo.group.name),
         retakeInfo.subject.name,
     )
+
+    override fun equals(other: Any?) = (other is RetakeInfoDTO)
+            && date == other.date
+            && time == other.time
+            && place == other.place
+            && note == other.note
+            && teacher == other.teacher
+            && subject == other.subject
 }
