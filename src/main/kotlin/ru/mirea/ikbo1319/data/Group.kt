@@ -10,6 +10,7 @@ data class Group(
     val id: Long?,
     @Column(unique = true, name = "`group`")
     val name: String,
+    val course: Int,
     @OneToMany(mappedBy = "group", cascade = [CascadeType.ALL])
     val retakeInfos: List<RetakeInfo>,
 )
