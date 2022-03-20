@@ -8,7 +8,7 @@ import javax.transaction.Transactional
 @Service
 class GroupService(private val groupRepository: GroupRepository) {
     fun save(group: Group) {
-        groupRepository.findByName(group.name) ?: groupRepository.save(group)
+        groupRepository.save(group)
     }
 
     fun findAll(): MutableList<Group> {
@@ -22,5 +22,13 @@ class GroupService(private val groupRepository: GroupRepository) {
     @Transactional
     fun deleteByName(name: String) {
         groupRepository.deleteByName(name)
+    }
+
+    fun findByName(name: String): Group? {
+        return groupRepository.findByName(name)
+    }
+
+    fun findById(id: Long): Group? {
+        return groupRepository.findById(id).orElse(null)
     }
 }

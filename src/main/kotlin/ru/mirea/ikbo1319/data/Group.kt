@@ -9,8 +9,8 @@ data class Group(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long?,
     @Column(unique = true, name = "`group`")
-    val name: String,
-    val course: Int,
+    var name: String,
+    var course: Int,
     @OneToMany(mappedBy = "group", cascade = [CascadeType.ALL])
     val retakeInfos: List<RetakeInfo>,
 )
