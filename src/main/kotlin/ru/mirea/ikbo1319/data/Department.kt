@@ -9,7 +9,7 @@ data class Department(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long?,
     @Column(unique = true, name = "department")
-    val name: String,
+    var name: String,
 ) {
     @OneToMany(mappedBy = "department", cascade = [CascadeType.ALL])
     val subjects: MutableSet<Subject> = HashSet()
