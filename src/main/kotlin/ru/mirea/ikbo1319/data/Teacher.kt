@@ -7,7 +7,7 @@ import javax.persistence.*
 data class Teacher(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long,
+    val id: Long?,
     @Column(name = "teacher")
     val name: String,
     @OneToMany(mappedBy = "teacher", cascade = [CascadeType.ALL])

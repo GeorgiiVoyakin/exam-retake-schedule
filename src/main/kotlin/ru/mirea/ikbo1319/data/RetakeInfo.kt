@@ -9,7 +9,7 @@ import javax.persistence.*
 data class RetakeInfo(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long,
+    val id: Long?,
     val date: LocalDate,
     val time: LocalTime,
     val place: String,

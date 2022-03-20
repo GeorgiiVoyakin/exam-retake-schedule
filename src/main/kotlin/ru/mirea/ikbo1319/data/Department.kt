@@ -7,7 +7,7 @@ import javax.persistence.*
 data class Department(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long,
+    val id: Long?,
     @Column(unique = true, name = "department")
     val name: String,
 ) {

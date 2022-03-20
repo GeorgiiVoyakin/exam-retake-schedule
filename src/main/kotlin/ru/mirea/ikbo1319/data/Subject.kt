@@ -7,7 +7,7 @@ import javax.persistence.*
 data class Subject(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long,
+    val id: Long?,
     @Column(name = "subject")
     val name: String,
     @ManyToOne
