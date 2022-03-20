@@ -9,7 +9,7 @@ data class RetakeInfoDTO(
     var place: String,
     var note: String?,
     var teacher: String,
-    var group: List<String>,
+    var group: List<String>?,
     var subject: String,
     var department: String,
 ) {
