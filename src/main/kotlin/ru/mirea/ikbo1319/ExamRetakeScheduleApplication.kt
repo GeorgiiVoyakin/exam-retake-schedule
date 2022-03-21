@@ -1,9 +1,10 @@
 package ru.mirea.ikbo1319
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
 import org.springframework.boot.runApplication
 
-@SpringBootApplication
+@SpringBootApplication(exclude = [SecurityAutoConfiguration::class])
 class ExamRetakeScheduleApplication
 
 fun main(args: Array<String>) {
