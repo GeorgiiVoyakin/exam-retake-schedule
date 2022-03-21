@@ -9,10 +9,10 @@ data class Subject(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long?,
     @Column(name = "subject")
-    val name: String,
+    var name: String,
     @ManyToOne
     @JoinColumn(name = "department_id", referencedColumnName = "id", nullable = false)
-    val department: Department,
+    var department: Department,
     @OneToMany(mappedBy = "subject", cascade = [CascadeType.ALL])
     val retakeInfos: List<RetakeInfo>,
 )

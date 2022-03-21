@@ -4,5 +4,5 @@ import org.springframework.data.jpa.repository.JpaRepository
 import ru.mirea.ikbo1319.data.Subject
 
 interface SubjectRepository : JpaRepository<Subject, Long> {
-    fun getByDepartment_Id(departmentId: Long): MutableList<Subject>
+    fun getByName(name: String): Subject?
 }
