@@ -10,18 +10,18 @@ data class RetakeInfo(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long?,
-    val date: LocalDate,
-    val time: LocalTime,
-    val place: String,
+    var date: LocalDate,
+    var time: LocalTime,
+    var place: String,
     @Column(columnDefinition = "text")
-    val note: String,
+    var note: String?,
     @ManyToOne
     @JoinColumn(name = "teacher_id", referencedColumnName = "id", nullable = false)
-    val teacher: Teacher,
+    var teacher: Teacher,
     @ManyToOne
     @JoinColumn(name = "group_id", referencedColumnName = "id", nullable = false)
-    val group: Group,
+    var group: Group,
     @ManyToOne
     @JoinColumn(name = "subject_id", referencedColumnName = "id", nullable = false)
-    val subject: Subject,
+    var subject: Subject,
 )
